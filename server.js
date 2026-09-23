@@ -1044,6 +1044,14 @@ function validateBody(rules) {
  * ========================================================================== */
 
 const app = express();
+
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "TN Blood Bank Backend is running"
+  });
+});
+
 app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: CONFIG.corsOrigin }));
